@@ -8,11 +8,11 @@ import {
 } from 'react-bootstrap-component';
 import useReactRouter from 'use-react-router';
 import { Routes } from '../router';
-import usePlayer from '../hooks/usePlayer';
+import { usePlayerContext } from '../context/PlayerContext';
 
 function PlayerList() {
   const { history } = useReactRouter();
-  const { players, deletePlayer } = usePlayer();
+  const { players, deletePlayer } = usePlayerContext();
   const onClickEdit = id => {
     history.push({
       pathname: Routes.editPlayer,

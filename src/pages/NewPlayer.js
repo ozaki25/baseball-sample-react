@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Panel, Form } from 'react-bootstrap-component';
 import useReactRouter from 'use-react-router';
-import usePlayer from '../hooks/usePlayer';
+import { usePlayerContext } from '../context/PlayerContext';
 import { Routes } from '../router';
 
 function NewPlayer() {
@@ -11,7 +11,7 @@ function NewPlayer() {
   const [position, setPosition] = useState('');
 
   const { history } = useReactRouter();
-  const { addPlayer } = usePlayer();
+  const { addPlayer } = usePlayerContext();
 
   const items = [
     { label: '名前', name: 'name', onChange: e => setName(e.target.value) },
