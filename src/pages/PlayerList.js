@@ -20,7 +20,7 @@ function PlayerList() {
     });
   };
   const onClickDelete = id => {
-    deletePlayer(id);
+    if (window.confirm('削除してよろしいですか？')) deletePlayer(id);
   };
   return (
     <Panel title="Player一覧" withTable>
