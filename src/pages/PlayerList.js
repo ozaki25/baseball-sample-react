@@ -8,9 +8,20 @@ import {
 } from 'react-bootstrap-component';
 import useReactRouter from 'use-react-router';
 import { Routes } from '../router';
+import usePlayer from '../hooks/usePlayer';
 
 function PlayerList() {
   const { history } = useReactRouter();
+  const { players, deletePlayer } = usePlayer();
+  const onClickEdit = id => {
+    history.push({
+      pathname: Routes.editPlayer,
+      state: { id },
+    });
+  };
+  const onClickDelete = id => {
+    deletePlayer(id);
+  };
   return (
     <Panel title="Player一覧" withTable>
       <Table withPanel>
@@ -25,22 +36,30 @@ function PlayerList() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <TableData>杉谷</TableData>
-            <TableData>29</TableData>
-            <TableData>日本ハム</TableData>
-            <TableData>外野手</TableData>
-            <TableData>
-              <Button
-                label="編集"
-                onClick={() => history.push(Routes.editPlayer)}
-                size="xs"
-              />
-            </TableData>
-            <TableData>
-              <Button label="削除" size="xs" />
-            </TableData>
-          </tr>
+          {players.map(({ id, name, age, team, position }) => {
+            return (
+              <tr key={id}>
+                <TableData>{name}</TableData>
+                <TableData>{age}</TableData>
+                <TableData>{team}</TableData>
+                <TableData>{position}</TableData>
+                <TableData>
+                  <Button
+                    label="編集"
+                    size="xs"
+                    onClick={() => onClickEdit(id)}
+                  />
+                </TableData>
+                <TableData>
+                  <Button
+                    label="削除"
+                    size="xs"
+                    onClick={() => onClickDelete(id)}
+                  />
+                </TableData>
+              </tr>
+            );
+          })}
         </tbody>
       </Table>
     </Panel>
