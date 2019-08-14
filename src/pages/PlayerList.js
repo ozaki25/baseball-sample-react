@@ -34,7 +34,11 @@ function PlayerList() {
               <Button
                 label="編集"
                 onClick={() => history.push(Routes.editPlayer)}
+                size="xs"
               />
+            </TableData>
+            <TableData>
+              <Button label="削除" size="xs" />
             </TableData>
           </tr>
         </tbody>
