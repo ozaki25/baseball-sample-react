@@ -17,11 +17,15 @@ function usePlayer() {
   const deletePlayer = id => {
     setPlayers(players.filter(p => p.id !== id));
   };
+  const findPlayer = id => {
+    return players.find(p => p.id === id);
+  };
   return {
     players,
     addPlayer,
     updatePlayer,
     deletePlayer,
+    findPlayer,
   };
 }
 

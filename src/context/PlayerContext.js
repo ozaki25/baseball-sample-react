@@ -4,10 +4,16 @@ import usePlayer from '../hooks/usePlayer';
 export const PlayerContext = createContext();
 
 const Provider = ({ children }) => {
-  const { players, addPlayer, updatePlayer, deletePlayer } = usePlayer();
+  const {
+    players,
+    addPlayer,
+    updatePlayer,
+    deletePlayer,
+    findPlayer,
+  } = usePlayer();
   return (
     <PlayerContext.Provider
-      value={{ players, addPlayer, updatePlayer, deletePlayer }}
+      value={{ players, addPlayer, updatePlayer, deletePlayer, findPlayer }}
     >
       {children}
     </PlayerContext.Provider>
