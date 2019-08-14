@@ -7954,9 +7954,14 @@ react-app-polyfill@^1.0.2:
     regenerator-runtime "0.13.3"
     whatwg-fetch "3.0.0"
 
+react-bootstrap-component@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-bootstrap-component/-/react-bootstrap-component-1.0.0.tgz#1b3cedfc07568604b6639c397acc5aa9051738e9"
+  integrity sha1-Gzzt/AdWhgS2Y5w5esxaqQUXOOk=
+
 "react-bootstrap-component@https://github.com/ozaki25/react-bootstrap-component":
   version "1.0.0"
-  resolved "https://github.com/ozaki25/react-bootstrap-component#dbe20d5672723c6a9e9b5bdd43aaf98a9e6573fc"
+  resolved "https://github.com/ozaki25/react-bootstrap-component#fe308fec448729b82298267b8512184169b0dc0e"
   dependencies:
     "@babel/preset-env" "^7.5.5"
     "@babel/preset-react" "^7.0.0"
