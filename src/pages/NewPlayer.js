@@ -24,7 +24,8 @@ function NewPlayer() {
     },
   ];
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
     const player = {
       name,
       age,
