@@ -43,7 +43,8 @@ function EditPlayer() {
     },
   ];
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
     const player = {
       id,
       name,
